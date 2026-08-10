@@ -1,5 +1,3 @@
-"use server"
-
 import { sql } from "@/lib/db"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
@@ -33,6 +31,8 @@ const perks = [
 ]
 
 async function createBusiness(formData: FormData) {
+  "use server"
+  
   const name = formData.get("name") as string
   const category = formData.get("category") as string
   const area = formData.get("area") as string
